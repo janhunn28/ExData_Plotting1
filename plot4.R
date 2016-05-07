@@ -20,22 +20,18 @@ dt$DateTime <- strptime( paste(dt$Date, dt$Time, sep=" "),format="%d/%m/%Y %H:%M
 
 
 png(filename="plot4.png",width=480, height=480, bg="white")
-par(mar=c(4.5, 4.5, 1, 1), mfrow=c(2, 2))
+par(mar=c(4, 4, 1, 1), mfrow=c(2, 2))
 
-plot(dt$DateTime, dt$Global_active_power, type="l", lwd=1.5, col="black", main = NULL, 
-     xlab="", ylab='Global Active Power (kilowatts)')
+plot(dt$DateTime, dt$Global_active_power, type="l", lwd=1.5, col="black", xlab="", ylab='Global Active Power (kilowatts)')
 
-plot(dt$DateTime, dt$Voltage, type="l", lwd=1.5, col="black", main = NULL, 
-     xlab="datetime", ylab='Voltage')
+plot(dt$DateTime, dt$Voltage, type="l", lwd=1.5, col="black", xlab="datetime", ylab="Voltage")
 
-plot(dt$DateTime, dt$Sub_metering_1, type="l", lwd=1.5, col="black", main = NULL, 
-     xlab="", ylab='Energy sub metering')
-lines(dt$DateTime, dt$Sub_metering_2, type="l", lwd=1.5, col="red")
-lines(dt$DateTime, dt$Sub_metering_3, type="l", lwd=1.5, col="blue")
-legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("Black", "Red", "Blue"), 
-       lwd = 2, lty=1, pch=NA, bty="n")
+plot(dt$DateTime, dt$Sub_metering_1, type="l", lwd=1.5, col="black", xlab="", ylab='Energy sub metering')
+  lines(dt$DateTime, dt$Sub_metering_2, type="l", lwd=1.5, col="red")
+  lines(dt$DateTime, dt$Sub_metering_3, type="l", lwd=1.5, col="blue")
+  legend("topright", col=c("Black", "Red", "Blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
+         lwd = 1.5, bty= "n")
 
-plot(dt$DateTime, dt$Global_reactive_power, type="l", lwd=1.5, col="black", main = NULL, 
-     xlab="datetime", ylab='Global_reactive_power')
+plot(dt$DateTime, dt$Global_reactive_power, type="l", lwd=1.5, col="black", xlab="datetime", ylab="Global_reactive_power")
 
 dev.off()

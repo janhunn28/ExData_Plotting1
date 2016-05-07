@@ -19,8 +19,8 @@ dt$DateTime <- strptime( paste(dt$Date, dt$Time, sep=" "),format="%d/%m/%Y %H:%M
 
 
 png(filename="plot2.png",width=480, height=480)
-plot(dt$DateTime, dt$Voltage, type="l", lwd=1.5, col="black", main = NULL, 
-     xlab="datetime", ylab='Voltage')
+plot(dt$DateTime, dt$Global_active_power, type="l", lwd=1.5, col="black", main = NULL, 
+     xlab="datetime", ylab="Global Active Power (kilowatts)")
 
 
 dev.off()
