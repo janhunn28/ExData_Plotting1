@@ -12,13 +12,18 @@
     unzip("exdata_data_household_power_consumption.zip")
     
   }
- 
+
+#Read in the table with the necessary options   
 dt <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings="?",stringsAsFactors = F) 
+#Choose only the dates of Feb 1 and Feb 2
 dt <- dt[(dt$Date == "1/2/2007") | (dt$Date == "2/2/2007"),]
+#Use R functions strptime to convert the date and time variables
 dt$DateTime <- strptime(paste(dt$Date, dt$Time, sep= " "), format = "%d%m%Y %H:%M:%S")
 
+#name the output file giving size measures
 png(filename = "plot1.png",width=480,height=480)
+#Create the histogram with appropriate colors and labels
 hist(dt$Global_active_power,col = "red",main="Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
-                     
+#Close the output device
 dev.off()
 
