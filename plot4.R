@@ -23,7 +23,7 @@ dt$DateTime <- strptime( paste(dt$Date, dt$Time, sep=" "),format="%d/%m/%Y %H:%M
 png(filename="plot4.png",width=480, height=480, bg="white")
 par(mar=c(4, 4, 1, 1), mfrow=c(2, 2))
 #Create the line graphs with appropriate colors and labels
-plot(dt$DateTime, dt$Global_active_power, type="l", lwd=1.5, col="black", xlab="", ylab='Global Active Power (kilowatts)')
+plot(dt$DateTime, dt$Global_active_power, type="l", lwd=1.5, col="black", xlab="", ylab='Global Active Power')
 
 plot(dt$DateTime, dt$Voltage, type="l", lwd=1.5, col="black", xlab="datetime", ylab="Voltage")
 

@@ -28,7 +28,7 @@ plot(dt$DateTime, dt$Sub_metering_1, type="l", lwd=1.5, col="black", xlab="", yl
    lines(dt$DateTime, dt$Sub_metering_3, type="l", lwd=1.5, col="blue")
    #Add the legend in the top right corner
    legend("topright", col=c("Black", "Red", "Blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
-       lwd = 1.5, bty= "n")
+       lwd = 1.5)
 
 #Close the output device
 dev.off()
